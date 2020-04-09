@@ -1,6 +1,5 @@
-#Lukas these are all python libberies where you can import functions from. From the Datetime liberry we are importing date.
 from datetime import datetime, date
-print("Enter the Date in the format: \"<year number>-<month number>-<day number>\"")
+print("Enter the Date in the format: <Year-Month-Date>")
 
 #To find day of week on Given date
 x = input("\nEnter the Date to find the day of the week :-")
