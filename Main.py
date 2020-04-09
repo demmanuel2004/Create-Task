@@ -1,3 +1,4 @@
+#Lukas these are all python libberies where you can import functions from. From the Datetime liberry we are importing date.
 from datetime import datetime, date
 print("Enter the Date in the format: \"<year number>-<month number>-<day number>\"")
 
