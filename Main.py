@@ -1,8 +1,10 @@
+name = input("Welcome user, what is your name? \n");
+
 from datetime import datetime, date
-print("Enter the Date in the format: <Year-Month-Date>")
+print("\n Welcome " + name +" \n" "Enter the Date in the format: <Year-Month-Date>")
 
 #To find day of week on Given date
-x = input("\nEnter the Date to find the day of the week :-")
+x = input("Enter the Date to find the day of the week :-")
 
 #strptime converts the given object to a string in the specified format which wrks opposite of strftime
 dd = datetime.strptime(x,"%Y-%m-%d")
@@ -27,3 +29,4 @@ diff = end - start
 diff1 = abs(diff)
 
 print("You have %d days of time left" % diff1.days)
+print("\n Thank you " + name +" for using this program")
