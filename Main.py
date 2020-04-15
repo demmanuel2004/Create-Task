@@ -1,16 +1,36 @@
-name = input("Welcome user, what is your name? \n");
+JANUARY = 31
+FEBRUARY = 28
+MARCH = 31
+APRIL = 30
+MAY = 31 
+JUNE = 30 
+JULY = 31
+AUGUST = 31 
+SEPTEMBER = 30
+OCTOBER = 31
+NOVEMBER = 30
+DECEMBER = 31 
 
-from datetime import datetime, date
-print("\n Welcome " + name +" \n" "Enter the Date in the format: <Year-Month-Date>")
+name = input("Welcome user, what is your name? \n"); 
 
-#To find day of week on Given date
-x = input("Enter the Date to find the day of the week :-")
+user_year = int(input("Welcome " + name +" \n" "Enter the year between the years 1600 and 2099. Please format it in numbers only <1999, etc>: \n"));
 
-#strptime converts the given object to a string in the specified format which wrks opposite of strftime
-dd = datetime.strptime(x,"%Y-%m-%d")
+if user_year % 4 == 0:
+  FEBRUARY = 29
 
+while user_year > 3000 or user_year < 1599:
+ user_year = int(input("Please enter a year that is between 1600 and 2099 \n"))
 
-print(dd.strftime("%A"))
+user_month = input("Now " + name + " Enter the month your day is located in. Please format it in words only <June, etc.> \n")
+
+user_month_fixed = user_month.upper()
+
+print (user_month_fixed)
+
+user_day = int(input("Finally " + name + " Enter the number day of the month in numbers please <1, 3, etc> \n"))
+
+while user_day > 31 or user_year < 0:
+ user_day = int(input("Please enter a day that is between 31 and 1 \n"))
 
 
 
