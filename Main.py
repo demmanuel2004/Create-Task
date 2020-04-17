@@ -1,3 +1,5 @@
+from datetime import datetime, date
+
 JANUARY = 31
 FEBRUARY = 28
 MARCH = 31
@@ -35,7 +37,7 @@ while user_day > 31 or user_year < 0:
 
 
 # To find out the no of days between two given dates
-print("\n Calculate number of days between two given dates :\n")
+print("\n Calculate number of days between two given dates <year>-<month>-<date> :\n")
 
 fdate = input("Enter the Start date :- ")
 start = datetime.strptime(fdate, "%Y-%m-%d")
