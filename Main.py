@@ -86,19 +86,20 @@ elif fixed_last_user_year == 5:
 elif fixed_last_user_year == 6:
   print ("It Will be Saturday!")
 
-# To find out the no of days between two given dates
-print("\n Calculate number of days between two given dates <year>-<month>-<date> :\n")
-
+answer = input("Continue? Enter yes to find the number of days between two dates: ")
+if answer == "yes":
+   print("\n Welcome back " + name +". Calculate number of days between two given dates <year>-<month>-<date> :\n")
+ 
 fdate = input("Enter the Start date :- ")
 start = datetime.strptime(fdate, "%Y-%m-%d")
 # %m will check month no should be from 1-12
 # %d will check that date should be from 1-31
-
+ 
 ldate = input("Enter the last date :- ")
 end = datetime.strptime(ldate, "%Y-%m-%d")
-
+ 
 diff = end - start
 diff1 = abs(diff)
-
+ 
 print("You have %d days of time left" % diff1.days)
 print("\n Thank you " + name +" for using this program")
