@@ -1,58 +1,37 @@
 from datetime import datetime, date
-
-"""JANUARY = 31
-FEBRUARY = 28
-MARCH = 31
-APRIL = 30
-MAY = 31 
-JUNE = 30 
-JULY = 31
-AUGUST = 31 
-SEPTEMBER = 30
-OCTOBER = 31
-NOVEMBER = 30
-DECEMBER = 31""" 
-
-"""def day_year(user_year):
+def day_year(user_year):
   if user_year <= 1699 and user_year >= 1600:
-     global a 
-     a = 6 
-  print (a)
-
+     global year_addition 
+     year_addition = 6 
   elif user_year <= 1799 and user_year >= 1700:
-      global year_addition_18th
-      year_addition_18th = 4 
-  print (year_addition_18th)"""
+      year_addition = 4 
+  elif user_year <= 1899 and user_year >= 1700:
+      year_addition = 2
+  elif user_year <= 1999 and user_year >= 1900:
+      year_addition = 0
+  elif user_year <= 2000 and user_year >= 2099:
+      year_addition = 6   
 
 def day_month(user_month):
   if user_month == 1 or user_month == 10:
     global month_addition
     month_addition = 0 
-    print (month_addition)
   elif user_month == 2 or user_month == 3:
     month_addition = 3 
-    print (month_addition)
   elif user_month == 4 or user_month == 7:
     month_addition = 6
-    print (month_addition)
   elif user_month == 5:
     month_addition = 1
-    print (month_addition)
   elif user_month == 6:
     month_addition = 4
-    print (month_addition)
   elif user_month == 7:
     month_addition = 6
-    print (month_addition)
   elif user_month == 8:
     month_addition = 2
-    print (month_addition)
   elif user_month == 9 or user_month == 12:
     month_addition = 5
-    print (month_addition)
   elif user_month == 11:
     month_addition = 3
-    print (month_addition)
 
 
 name = input("Welcome user, what is your name? \n"); 
@@ -73,11 +52,36 @@ day_month(user_month)
 while user_month > 13 or user_year < 0:
  user_month = int(input("Please enter a month that is between 1 and 12\n"))
 
-
 user_day = int(input("Finally " + name + " Enter the number day of the month in numbers please <1, 3, etc> \n"))
-
 while user_day > 31 or user_year < 0:
  user_day = int(input("Please enter a day that is between 31 and 1 \n"))
+
+global last_user_year 
+last_user_year = int(str(user_year)[2:4])
+
+day_calculated = user_day + month_addition + last_user_year + last_user_year / 4 + 6 
+
+global day_number_calculated
+day_number_calculated = day_calculated % 7
+
+global fixed_last_user_year 
+fixed_last_user_year = day_number_calculated
+fixed_last_user_year = float(str(fixed_last_user_year)[0:2])
+
+if fixed_last_user_year == 0:
+  print ("It will be Sunday!")
+elif fixed_last_user_year == 1:
+  print ("It Will be Monday!")
+elif fixed_last_user_year == 2:
+  print ("It Will be Tuesday!")
+elif fixed_last_user_year == 3:
+  print ("It Will be Wedensday!")
+elif fixed_last_user_year == 4:
+  print ("It Will be Thursday!")
+elif fixed_last_user_year == 5:
+  print ("It Will be Friday!")
+elif fixed_last_user_year == 6:
+  print ("It Will be Saturday!")
 
 
 # To find out the no of days between two given dates
