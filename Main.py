@@ -140,12 +140,12 @@ if answer == "yes":
    ldate = input("Enter the last date :- ")
    end = datetime.strptime(ldate, "%Y-%m-%d")
    no_of_days(start , end)
+   print("\n Thank you " + name +" for using this program")
 else:
     print("\n Thank you " + name +" for using this program")
 
 
 ''' Algorithm :
-
 Step 1 : Input name of user.
 Step 2 : Call day of week 
 Step 3 : Input answer(yes/no)
@@ -156,10 +156,7 @@ Step 7 : Input start date in format defined in strptime , predefined function in
 Step 8 : Input end date in format defined in strptime , predefined  function in datetime module 
 Step 9 : Call no_of_days(start , end)
 Step 10 : Exit.
-
-
 Algorithm to calculate no of days between two dates
-
 no_of_days(start , end)
 Step 1 : If start > end , then
 	diff = start - end
