@@ -55,7 +55,7 @@ day_year(user_year)
 
 #makes sure the years are between a certain range 
 while user_year > 3000 or user_year < 1599:
- user_year = int(input("Please enter a year that is between 1600 and 2099 \n"))
+ user_year = int(input("Invalid Year! Please enter a year that is between 1600 and 2099 \n"))
 #Asks the user for the month
 user_month = int(input("Now " + name + " Enter the number of the month your day is located in. Please format it in numbers only <for June it will be 6> \n"))
 
@@ -70,12 +70,12 @@ leap_year_addition(user_year, user_month)
 day_month(user_month)
 #Makes sure the months are valid
 while user_month > 13 or user_year < 0:
- user_month = int(input("Please enter a month that is between 1 and 12\n"))
+ user_month = int(input("Invalid Month! Please enter a month that is between 1 and 12\n"))
 #Asks the user for the day
 user_day = int(input("Finally " + name + " Enter the number day of the month in numbers please <1, 3, etc> \n"))
 #Makes sure the users day is valid
 while user_day > 31 or user_year < 0:
- user_day = int(input("Please enter a day that is between 31 and 1 \n"))
+ user_day = int(input("Invalid Day! Please enter a day that is between 31 and 1 \n"))
 #Takes the last two numbers of the year
 if user_year <= 1699 and user_year >= 1600:
   century_addition = 6 
