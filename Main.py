@@ -1,4 +1,15 @@
-from datetime import datetime, date
+import calendar
+
+def findday(date):
+    day , month , year = (int(i) for i in date.split(' '))
+    daynumber = calendar.weekday(day , month , year )
+    days = ['Monday' , 'Tuesday' , 'Wednesday' , 'Thursay' , 'Friday' , 'Saturday' , 'Sunday']
+    return (days[daynumber])
+
+    date1 = ' 03 02 2019 '
+    print(findday(date1))
+
+ #from datetime import datetime, date
 
 # the day_year is a function in which it assigns a number to the equation to solve for the day
 def day_year(user_year):
@@ -86,20 +97,51 @@ elif fixed_last_user_year == 5:
 elif fixed_last_user_year == 6:
   print ("It Will be Saturday!")
 
+from datetime import datetime, date
+# to calculate no of days between two given dates 
+
+def no_of_days(start,end):
+    if start > end :
+        diff = start - end 
+    else:
+        diff = end - start 
+    print("You have %d days of time left" % diff.days)
+
+
+#Asking the user to whether to count no of days or not 
 answer = input("Continue? Enter yes to find the number of days between two dates: ")
 if answer == "yes":
    print("\n Welcome back " + name +". Calculate number of days between two given dates <year>-<month>-<date> :\n")
- 
-fdate = input("Enter the Start date :- ")
-start = datetime.strptime(fdate, "%Y-%m-%d")
-# %m will check month no should be from 1-12
-# %d will check that date should be from 1-31
- 
-ldate = input("Enter the last date :- ")
-end = datetime.strptime(ldate, "%Y-%m-%d")
- 
-diff = end - start
-diff1 = abs(diff)
- 
-print("You have %d days of time left" % diff1.days)
-print("\n Thank you " + name +" for using this program")
+   fdate = input("Enter the Start date :- ")
+   start = datetime.strptime(fdate, "%Y-%m-%d")
+   # %m will check month no should be from 1-12
+   # %d will check that date should be from 1-31
+   ldate = input("Enter the last date :- ")
+   end = datetime.strptime(ldate, "%Y-%m-%d")
+   no_of_days(start , end)
+else:
+    print("\n Thank you " + name +" for using this program")
+
+
+''' Algorithm :
+
+Step 1 : Input name of user.
+Step 2 : Call day of week 
+Step 3 : Input answer(yes/no)
+Step 4 : If  answer is yes , then goto step 6.
+Step 5 : If answer is no , them goto step 10
+Step 6 : Print name of user .
+Step 7 : Input start date in format defined in strptime , predefined function in datetime module .
+Step 8 : Input end date in format defined in strptime , predefined  function in datetime module 
+Step 9 : Call no_of_days(start , end)
+Step 10 : Exit.
+
+
+Algorithm to calculate no of days between two dates
+
+no_of_days(start , end)
+Step 1 : If start > end , then
+	diff = start - end
+Step 2 : If start <= end , then
+	diff = end - start 
+Step 3 : Print no of days between two different dates entered by user , stored in diff '''
