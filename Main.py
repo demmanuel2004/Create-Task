@@ -11,6 +11,7 @@ def findday(date):
 
  #from datetime import datetime, date
 
+# the day_year is a function in which it assigns a number to the equation to solve for the day
 def day_year(user_year):
   if user_year <= 1699 and user_year >= 1600:
      global year_addition 
@@ -59,8 +60,9 @@ def leap_year_addition(user_year):
     subtract_year = 0 
 
 while user_month > 13 or user_year < 0:
- user_month = int(input("Please enter a month that is between 1 and 
+ user_month = int(input("Please enter a month that is between 1 and 12"))
 user_day = int(input("Finally " + name + " Enter the number day of the month in numbers please <1, 3, etc> \n"))
+
 while user_day > 31 or user_year < 0:
  user_day = int(input("Please enter a day that is between 31 and 1 \n"))
 day_month(user_month)
