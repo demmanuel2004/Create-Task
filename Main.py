@@ -45,21 +45,28 @@ def day_month(user_month):
     month_addition = 5
   elif user_month == 11:
     month_addition = 3
+
 #asks for a name
 name = input("Welcome user, what is your name? \n"); 
 #asks for a year
 user_year = int(input("Welcome " + name +" \n" "Enter the year between the years 1600 and 2099. Please format it in numbers only <1999, etc>: \n"));
 # runs the day_year function
 day_year(user_year)
-#finds is the day is a leap year
-if user_year % 4 == 0:
-  FEBRUARY = 29
+
 #makes sure the years are between a certain range 
 while user_year > 3000 or user_year < 1599:
  user_year = int(input("Please enter a year that is between 1600 and 2099 \n"))
 #Asks the user for the month
 user_month = int(input("Now " + name + " Enter the number of the month your day is located in. Please format it in numbers only <for June it will be 6> \n"))
-#runs the month functio
+
+def leap_year_addition(user_year, user_month):
+  if user_year % 4 == 0:
+    global subtract_year
+    subtract_year = 1 
+  elif user_year % 4 != 0:
+    subtract_year = 0 
+#runs the month function
+leap_year_addition(user_year, user_month)
 day_month(user_month)
 #Makes sure the months are valid
 while user_month > 13 or user_year < 0:
@@ -70,11 +77,25 @@ user_day = int(input("Finally " + name + " Enter the number day of the month in 
 while user_day > 31 or user_year < 0:
  user_day = int(input("Please enter a day that is between 31 and 1 \n"))
 #Takes the last two numbers of the year
-global last_user_year 
+if user_year <= 1699 and user_year >= 1600:
+  century_addition = 6 
+elif user_year <= 1799 and user_year >= 1700:
+  century_addition = 4 
+elif user_year <= 1899 and user_year >= 1800:
+  century_addition = 2
+elif user_year <= 1999 and user_year >= 1900:
+  century_addition = 0
+elif user_year <= 2099 and user_year >= 2000:
+  century_addition = 6  
 last_user_year = int(str(user_year)[2:4])
-# The equation to solve for the day part 1
-day_calculated = user_day + month_addition + last_user_year + last_user_year / 4 + 6 
 # The equation to solve for the day part 2
+if subtract_year == 1 and user_month != 2:
+  counter_subtract = 1
+elif subtract_year == 0:
+  counter_subtract = 1
+elif subtract_year == 1 and user_month == 2:
+  counter_subtract = 0 
+day_calculated = user_day +  month_addition + century_addition + last_user_year - subtract_year + counter_subtract + last_user_year / 4  
 global day_number_calculated
 day_number_calculated = day_calculated % 7
 # Takes the first digit (if a decimal) to ensure acurate results for the days
