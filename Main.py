@@ -1,4 +1,4 @@
-#Created By Daniel Emmanuel
+#Created By Daniel Emmanuel and Lukas Mikulenas 
 import calendar
 
 def findday(date):
