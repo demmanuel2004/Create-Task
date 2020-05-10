@@ -119,7 +119,7 @@ def no_of_days(start,end):
     else:
         diff = end - start 
     print("You have %d days of time left" % diff.days)
-
+#Print no of days between two different dates entered by user , stored in diff 
 
 #Asking the user to whether to count no of days or not 
 answer = input("Continue? Enter yes to find the number of days between two dates: ")
