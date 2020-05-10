@@ -85,7 +85,7 @@ def main_calculation(user_year, user_month, user_day, month_addition):
   if subtract_year == 1 and user_month != 2:
     counter_subtract = 1
   elif subtract_year == 0:
-    counter_subtract = 1
+    counter_subtract = 0
   elif subtract_year == 1 and user_month == 2:
     counter_subtract = 0 
   day_calculated = user_day +  month_addition + century_addition + last_user_year - subtract_year + counter_subtract + last_user_year / 4  
