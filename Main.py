@@ -11,7 +11,6 @@ def findday(date):
 
  #from datetime import datetime, date
 
-# the day_year is a function in which it assigns a number to the equation to solve for the day
 def day_year(user_year):
   if user_year <= 1699 and user_year >= 1600:
      global year_addition 
@@ -49,8 +48,8 @@ def day_month(user_month):
 name = input("Welcome user, what is your name? \n"); 
 user_year = int(input("Welcome " + name +" \n" "Enter the year between the years 1600 and 2099. Please format it in numbers only <1999, etc>: \n")); 
 while user_year > 3000 or user_year < 1599:
- user_year = int(input("Invalid Year! Please enter a year that is between 1600 and 2099 \n"))
-user_month = int(input("Now " + name + " Enter the number of the month your day is located in. Please format it in numbers only <for June it will be 6> \n"))
+ user_year = int(input("Invalid Year! Please enter a year that is between 1600 and 2099. \n"))
+user_month = int(input("Now " + name + ", Enter the number of the month your day is located in. Please format it in numbers only <for example, June will be 6>: \n"))
 
 def leap_year_addition(user_year):
   if user_year % 4 == 0:
@@ -60,11 +59,11 @@ def leap_year_addition(user_year):
     subtract_year = 0 
 
 while user_month > 13 or user_year < 0:
- user_month = int(input("Invalid Month! Please enter a month that is between 1 and 12"))
-user_day = int(input("Finally " + name + " Enter the number day of the month in numbers please <1, 3, etc> \n"))
+ user_month = int(input("Invalid Month! Please enter a month that is between 1 and 12. \n"))
+user_day = int(input("Finally " + name + ", Enter the number day of the month in numbers please <1, 3, etc>: \n"))
 
 while user_day > 31 or user_year < 0:
- user_day = int(input("Invalid Day! Please enter a day that is between 31 and 1 \n"))
+ user_day = int(input("Invalid Day! Please enter a day that is between 31 and 1. \n"))
 day_month(user_month)
 
 def main_calculation(user_year, user_month, user_day, month_addition):
