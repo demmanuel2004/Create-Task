@@ -1,3 +1,4 @@
+#Created By Daniel Emmanuel
 import calendar
 
 def findday(date):
@@ -8,9 +9,8 @@ def findday(date):
 
     date1 = ' 03 02 2019 '
     print(findday(date1))
-
  #from datetime import datetime, date
-
+#Created By Lukas Mikulenas
 def day_year(user_year):
   if user_year <= 1699 and user_year >= 1600:
      global year_addition 
@@ -109,6 +109,7 @@ def main_calculation(user_year, user_month, user_day, month_addition):
     print ("It Will be Saturday!")
 main_calculation(user_year, user_month, user_day, month_addition)
 
+#Created by Daniel Emmanuel
 from datetime import datetime, date
 # to calculate no of days between two given dates 
 
